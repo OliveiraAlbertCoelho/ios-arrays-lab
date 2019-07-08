@@ -419,6 +419,20 @@ Given an Arr ay of Tuples of type `(Int, Int)`, create an array containing all t
 Input: `[(4,2), (-3,-3), (1,1), (3,9)]`
 
 Output: `[(-3,-3), (1,1)]`
+```swift
+
+let tuppleArray = [(4,2), (-3,-3), (1,1), (3,9)]
+var holderTupple: [(Int, Int)] = []
+for i in tuppleArray {
+if i.0 == i.1 {
+holderTupple.append((i))
+}
+}
+print(holderTupple)
+
+```
+
+
 
 
 ## Question 22
@@ -437,9 +451,6 @@ allAreTrue = false
 }
 }
 print(allAreTrue)
-
-
-
 ```
 
 
@@ -450,6 +461,18 @@ Given an Array of Ranges of Ints, create an array that has all the values from a
 Input: `[0..<3 , 2..<10, -4..<6, 13..<14]`
 
 Output: `[-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,13]`
+```swift
+var arrayOfRanges = [0..<3 , 2..<10, -4..<6, 13..<14]
+var sortedRanges = [Int]()
+for i in arrayOfRanges {
+for b in i {
+if !sortedRanges.contains(b){
+sortedRanges.append(b)
+}}
+}
+sortedRanges.sort()
+print(sortedRanges)
+```
 
 
 ## Question 24
@@ -459,21 +482,59 @@ Given an array of Characters, create a String ignoring and uppercase Characters 
 Input: `let arr: [Character] = ["a", "p","P","l","E"," ","S","a","u","C,"e"]`
 
 Output: `"ApLeAuE"`
+```swift
 
+let arr: [Character] = ["a", "p","P","l","E"," ","S","a","u","C","e"]
+var word = ""
+var counter = 0
+for i in arr where i != " " {
+if i != Character(i.uppercased()) {
+if counter % 2 == 0{
+word += i.uppercased()
+}else {
+word += String(i)
+}
+counter += 1
+}}
+print(word)
+```
 
 ## Question 25
 
 Print out each element in `myMatrix`
 
 `var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]`
+```
+var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+for i in myMatrix {
+for b in i {
+print(b)
+}
+}
 
+```
 
 ## Question 26
 
 Print out the sum of the diagonals of `myMatrix`.
 
 `var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]`
+```swift
 
+var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
+var counter = 0
+var diagonalsSum = 0
+for i in myMatrix {
+for b in i {
+if counter % 2 == 0 {
+diagonalsSum += b
+}
+counter += 1
+}
+}
+print(diagonalsSum)
+
+```
 
 ## Question 27
 
@@ -482,3 +543,15 @@ Using for loops, rotate `matrixToRotate` 90 degrees.
 var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 ![Matrix Rotation](images/rotated_matrix.jpeg)
+```swift
+var matrixToRotate = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+var secMatrix = Array(repeating: Array(repeating: 0, count: matrixToRotate.count),count: matrixToRotate.count)
+for i in 0..<matrixToRotate.count {
+for  b in 0..<matrixToRotate[i].count {
+secMatrix[i][b] = matrixToRotate[matrixToRotate[i].count-1-b][i]
+}
+}
+print(secMatrix)
+
+
+```
