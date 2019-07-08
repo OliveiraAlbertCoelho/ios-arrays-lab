@@ -16,7 +16,7 @@ print("\(color[0]), \(color[2]) and \(color[3]) are some of my favorite colors")
 ## Question 2
 
 Remove "Illinois" and "Kansas" from the array below.
-```
+```swift
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
 westernStates.remove(at: 5)
 westernStates.remove(at: 4)
@@ -44,7 +44,7 @@ print("\(i): not continental United States")
 Print out how many non-whitespace characters are in `myString`:
 
 `let myString = "This is good practice with Strings!"`
-```
+```swift
 let myString = "This is good practice with Strings!"
 var whiteSpace = 0
 for i in myString {
@@ -58,7 +58,7 @@ print(whiteSpace)
 Iterate through the array below. For each sentence, print out how many non-whitespace characters are in it.
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
-```
+```swift
 var whiteSpace = 0
 var counter = 0
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
@@ -109,7 +109,7 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 - Put "Reyes" to bat 8th instead.
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
-```
+```swift
 var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
 var counter = 0
 for i in battingLineup {
@@ -228,7 +228,7 @@ print(smallest)
 Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
-```
+```swift
 var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
 for i in secondListOfNumbers {
 if i%2  != 0{
@@ -243,7 +243,7 @@ print(i)
 Iterate through `thirdListOfNumbers`, and print out the sum.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
-```
+```swift
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 var sum = 0
 for i in thirdListOfNumbers {
@@ -258,7 +258,7 @@ print(sum)
 Iterate through `thirdListOfNumbers`, and print out the sum of all the even numbers.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
-```
+```swift
 var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 var sum = 0
 for i in thirdListOfNumbers {
@@ -309,7 +309,26 @@ print(noDupeList)
 Find the second smallest number in an Array of Ints
 
 `let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}`
+```swift
 
+let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
+var small = Int.max
+var secSmall = Int.max
+
+for i in arrayOfNumbers {
+if i < small {
+small = i //
+}
+}
+
+for i in arrayOfNumbers {
+if i < secSmall && i != small {
+secSmall = i
+}
+}
+print(secSmall)
+
+```
 
 ## Question 16
 
@@ -338,7 +357,7 @@ var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,3
 
 Identify if there are 3 integers that sum to 10 in the following array. If so, print them as a triplet. If there are multiple triplets, print all possible triplets.
 
-```
+```swift
 var tripleSumArr = [-20,-14, -8,-5,-3,-2,1,2,3,4,9,15,20,30]
 for a in tripleSumArr {
 for b in tripleSumArr {
@@ -394,7 +413,7 @@ Given an Array of Arrays of Ints, find the Array of Ints with the largest sum:
 Input: `[[2,4,1],[3,0],[9,3]]`
 
 Output: `[9,3]`
-```
+```swift
 var input = [[2,4,1],[3,0],[9,3]]
 var sum = 0
 var biGsum = 0
@@ -504,7 +523,7 @@ print(word)
 Print out each element in `myMatrix`
 
 `var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]`
-```
+```swift
 var myMatrix = [[10, 14, 12], [91, 1, 9], [31, 3, 21]]
 for i in myMatrix {
 for b in i {
